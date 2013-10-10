@@ -38,10 +38,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 PS1="%{$fg_bold[green]%}vps ➜ %{$fg_bold[red]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}"
-
-export PATH=/home/zach/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/zach/bin
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 alias l="ls -1"
-alias ack="ack --ignore-dir=node_modules --ignore-dir=public"
+alias ack="ack --ignore-dir=node_modules --ignore-dir=vendor"
 alias c.="cd .."
 
 # Git aliases
@@ -50,3 +49,5 @@ alias gc="echo 'have you pulled first?' && sleep 3 && git commit"
 alias gpl="git pull"
 alias gpu="git push"
 alias gb="git branch"
+
+export EDITOR="vim"
