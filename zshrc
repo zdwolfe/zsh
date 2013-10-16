@@ -1,53 +1,46 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.zsh/oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# ZSH update settings
+DISABLE_AUTO_UPDATE="true"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
+plugins=(git tmux)
 source $ZSH/oh-my-zsh.sh
+
+# zsh-tmux configuration
+ZSH_TMUX_AUTOSTART="true"
 
 # Customize to your needs...
 PS1="%{$fg_bold[green]%}vps ➜ %{$fg_bold[red]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}"
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 alias l="ls -1"
-alias ack="ack --ignore-dir=node_modules --ignore-dir=vendor"
+alias ack="ack-grep --ignore-dir=node_modules --ignore-dir=vendor --ignore-dir=bower_components"
 alias c.="cd .."
-
-# Git aliases
 alias gs="git status"
-alias gc="echo 'have you pulled first?' && sleep 3 && git commit"
-alias gpl="git pull"
-alias gpu="git push"
-alias gb="git branch"
 
 export EDITOR="vim"
+
+# Thanks to github.com/jdavis for this
+function incognito() {
+    if [ -z $EDITOR ]; then
+        EDITOR=vim
+    fi
+
+    # Create temp for storing commands
+    TEMPFILE=`mktemp -q incognito.XXXXXXXX`
+
+    # Prompt for commands, only run if successful
+    $EDITOR $TEMPFILE || {
+        echo "Invalid return on the editing"
+        return
+    }
+
+    # Run the script
+    sh $TEMPFILE
+
+    # Clean everything up
+    rm -f $TEMPFILE
+}
+
+source ~/.zsh/zsh-fuzzy-match/fuzzy-match.zsh
