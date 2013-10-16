@@ -5,7 +5,7 @@ ZSH_THEME="robbyrussell"
 # ZSH update settings
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(git tmux)
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # zsh-tmux configuration
