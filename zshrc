@@ -10,7 +10,7 @@ ZSH_TMUX_AUTOSTART="true"
 
 ZSH_TMUX_AUTOCONNECT="false"
 
-plugins=(git tmux web-search debian git-extras)
+plugins=(git tmux web-search debian git-extras lol)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
