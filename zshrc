@@ -8,7 +8,9 @@ DISABLE_AUTO_UPDATE="true"
 # zsh-tmux configuration
 ZSH_TMUX_AUTOSTART="true"
 
-plugins=(git tmux)
+ZSH_TMUX_AUTOCONNECT="false"
+
+plugins=(git tmux web-search debian git-extras)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
