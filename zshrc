@@ -20,7 +20,6 @@ alias gs="git status"
 alias gd="git difftool -y"
 alias gpo="git pull origin"
 
-
 export EDITOR="vim"
 
 # Thanks to github.com/jdavis for this
