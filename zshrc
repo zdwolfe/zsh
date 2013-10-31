@@ -5,11 +5,11 @@ ZSH_THEME="robbyrussell"
 # ZSH update settings
 DISABLE_AUTO_UPDATE="true"
 
-plugins=(git tmux)
-source $ZSH/oh-my-zsh.sh
-
 # zsh-tmux configuration
 ZSH_TMUX_AUTOSTART="true"
+
+plugins=(git tmux)
+source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
