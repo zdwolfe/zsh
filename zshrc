@@ -6,9 +6,9 @@ ZSH_THEME="robbyrussell"
 DISABLE_AUTO_UPDATE="true"
 
 # zsh-tmux configuration
-ZSH_TMUX_AUTOSTART="true"
+#ZSH_TMUX_AUTOSTART="true"
 
-ZSH_TMUX_AUTOCONNECT="false"
+#ZSH_TMUX_AUTOCONNECT="false"
 
 plugins=(git tmux web-search debian git-extras lol)
 source $ZSH/oh-my-zsh.sh
