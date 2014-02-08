@@ -14,14 +14,10 @@ plugins=(git tmux web-search debian git-extras lol)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/bin/AWS-ElasticBeanstalk-CLI-2.6.0/eb/linux/python2.7
+export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
 alias l="ls -1"
 alias ack="ack-grep --ignore-dir=node_modules --ignore-dir=vendor --ignore-dir=bower_components"
 alias c.="cd .."
-alias gs="git status"
-alias gd="git difftool -y"
-alias gpo="git pull origin"
-alias gitroot="echo $(git rev-parse --show-toplevel)"
 
 export EDITOR="vim"
 
