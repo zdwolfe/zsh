@@ -15,10 +15,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-alias l="ls -1"
-alias ack="ack-grep --ignore-dir=node_modules --ignore-dir=vendor --ignore-dir=bower_components"
-alias c.="cd .."
-
 export EDITOR="vim"
 
 # Thanks to github.com/jdavis for this
